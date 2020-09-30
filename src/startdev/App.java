@@ -22,7 +22,9 @@ class App {
         System.out.println("\u001B[36m(\u001B[35m2\u001B[36m) - Угадай число.");
         System.out.println("\u001B[36m(\u001B[35m3\u001B[36m) - 3 задача одномерный массив");
         System.out.println("\u001B[36m(\u001B[35m4\u001B[36m) - 4 задача");
-        System.out.println("\u001B[36m(\u001B[35m5\u001B[36m) - Удалить конкректный тег из html документа");
+        System.out.println("\u001B[36m(\u001B[35m5\u001B[36m) - 5 задача");
+        System.out.println("\u001B[36m(\u001B[35m6\u001B[36m) - 6 задача");
+        System.out.println("\u001B[36m(\u001B[35m7\u001B[36m) - 7 задача");
         System.out.println(" ");
         System.out.println("\u001B[35mВыберите задачу: " + "\u001B[32m");
         String choose = input.nextLine();
@@ -49,6 +51,13 @@ class App {
                 break;
             
             case"5":
+                break;
+            
+            case"6":
+                Task6();
+                break;
+            
+            case"7":
                 break;
         }
     }
@@ -128,7 +137,7 @@ class App {
     }
     private void Task3(){
         System.out.println("----- Задача 3 ------");
-        System.out.println("Создаем одномерный массив  из 10 ячеек типа int, \nзаполняем его случайными числами и выводим \nего значения в цикле");
+        System.out.println("Создаем одномерный массив  из 10 ячеек типа int, \nзаполняем его случайными числами и выводим \nего значения в цикле:");
         int myArr[] = new int[10];
         int sum = 0;
         int ran;
@@ -157,7 +166,7 @@ class App {
 }
     private void Task4(){
         System.out.println("----- Задача 4 ------");
-        System.out.println("Создаем одномерный массив  из 10 ячеек типа int, \nзаполняем его случайными ЧЕТНЫМИ числами и выводим \nего значения в цикле");
+        System.out.println("Создаем одномерный массив  из 10 ячеек типа int, \nзаполняем его случайными ЧЕТНЫМИ числами и выводим \nего значения в цикле:");
         int myArr[] = new int[10];
         Random random = new Random();
         for(int i = 0; i < 10; i++){
@@ -175,5 +184,27 @@ class App {
             }
         }
         System.out.println("----- конец задачи 4 ------");
+    }
+    private void Task5(){
+        
+    }
+    private void Task6(){
+        System.out.println("----- Задача 6 ------");
+        System.out.println("Создаем ДВУХМЕРНЫЙ ЗУБЧАТЫЙ массив  из 10х(5,6,7,8,9) ячеек типа int, \nзаполняем его случайными числами и выводим \nего значения в цикле");
+        int[][] myArr = new int[10][];
+        myArr[0] = new int[5];
+        myArr[1] = new int[6];
+        myArr[2] = new int[7];
+        myArr[3] = new int[8];
+        myArr[4] = new int[9];
+        Random random = new Random();
+        for(int x = 0; x < myArr.length; x++){
+            for(int y = 5; y < myArr[x].length; y++){
+                myArr[x][y] = random.nextInt(10);
+                System.out.println(myArr[x][y] + "\t");
+            }
+            System.out.println("");
+        }
+        System.out.println("----- конец задачи 6 ------");
     }
 }

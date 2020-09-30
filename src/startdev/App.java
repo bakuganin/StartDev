@@ -51,6 +51,7 @@ class App {
                 break;
             
             case"5":
+                Task5();
                 break;
             
             case"6":
@@ -58,6 +59,7 @@ class App {
                 break;
             
             case"7":
+                Task7();
                 break;
         }
     }
@@ -185,26 +187,73 @@ class App {
         }
         System.out.println("----- конец задачи 4 ------");
     }
-    private void Task5(){
+    public void Task5(){
+        System.out.println("----- Задача 5 ------");
+        System.out.println("Создаем ДВУХМЕРНЫЙ массив  из 10х5 ячеек типа int, \\nзаполняем его случайными числами и выводим \\nего значения в цикле"); 
+
+        int[][] a = new int[10][5];
+        int max, min;
+        Random ran = new Random();
         
+        for (int i=0;i < a.length;i++) {
+            for (int j = 0 ; j < a[i].length; j++) {
+                a[i][j]=ran.nextInt(10) + 1;
+            }
+        }
+        
+        for (int i=0;i < a.length;i++,System.out.println()) {
+            for (int j=0; j < a[i].length; j++) {
+                System.out.print(a[i][j] + " ");
+            }
+        }
     }
+
     private void Task6(){
-        System.out.println("----- Задача 6 ------");
         System.out.println("Создаем ДВУХМЕРНЫЙ ЗУБЧАТЫЙ массив  из 10х(5,6,7,8,9) ячеек типа int, \nзаполняем его случайными числами и выводим \nего значения в цикле");
-        int[][] myArr = new int[10][];
-        myArr[0] = new int[5];
-        myArr[1] = new int[6];
-        myArr[2] = new int[7];
-        myArr[3] = new int[8];
-        myArr[4] = new int[9];
+        int myArr[][] = new int[10][];
+        int n = -1;
+        int x;
         Random random = new Random();
-        for(int x = 0; x < myArr.length; x++){
-            for(int y = 5; y < myArr[x].length; y++){
-                myArr[x][y] = random.nextInt(10);
-                System.out.println(myArr[x][y] + "\t");
+        x = random.nextInt((1000 - 500) + 500);
+        boolean cycle = false;
+        for (int i = 0; i < myArr.length; i++) {
+            if (i == 5 | cycle) {
+                cycle = true;
+                n++;
+            } else {
+                n = i;
+            }
+            int num = n + 5;
+            myArr[i] = new int[num];
+            for (int j = 0; j < myArr[i].length; j++) {
+                int randomNum = random.nextInt(x + 1);
+                randomNum += x;
+                myArr[i][j] = randomNum;
+            }
+        }
+        for (int i = 0; i < myArr.length; i++) {
+            for (int nu : myArr[i]) {
+                System.out.printf("%4d", nu);
             }
             System.out.println("");
+
         }
-        System.out.println("----- конец задачи 6 ------");
+    }
+    private void Task7(){
+        System.out.println("Введите строку");
+        Scanner input = new Scanner(System.in);
+        String words = input.nextLine();
+        // посчитайте сколько раз в строке встречается введенная вами буква
+        System.out.println("Введите букву: ");
+        String letter = input.next();
+        char[] chr = letter.toCharArray();
+        int n = 0;
+        char[] ch = words.toCharArray();
+        for (char i : ch){
+            if (i == chr[0]){
+                n+=1;
+            }
+        }
+        System.out.printf("Буква \"%s\" встречается в тексте %d раз\n", letter, n);
     }
 }

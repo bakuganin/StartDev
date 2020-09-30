@@ -15,52 +15,111 @@ import java.util.Scanner;
 class App {
 
     void run() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("\u001B[35mЗадачи:");
-        System.out.println("\u001B[36m(\u001B[35m0\u001B[36m) - Выход из программы.");
-        System.out.println("\u001B[36m(\u001B[35m1\u001B[36m) - Конвентор градусов.");
-        System.out.println("\u001B[36m(\u001B[35m2\u001B[36m) - Угадай число.");
-        System.out.println("\u001B[36m(\u001B[35m3\u001B[36m) - 3 задача одномерный массив");
-        System.out.println("\u001B[36m(\u001B[35m4\u001B[36m) - 4 задача");
-        System.out.println("\u001B[36m(\u001B[35m5\u001B[36m) - 5 задача");
-        System.out.println("\u001B[36m(\u001B[35m6\u001B[36m) - 6 задача");
-        System.out.println("\u001B[36m(\u001B[35m7\u001B[36m) - 7 задача");
-        System.out.println(" ");
-        System.out.println("\u001B[35mВыберите задачу: " + "\u001B[32m");
-        String choose = input.nextLine();
-        System.out.println(" ");
-        switch(choose){
-            case"0":
-                System.out.println("Выход из программы...");
-                break;
-                
-            case"1":
-                Weather();
-                break;
-                
-            case"2":
-                RandomGame();
-                break;
-            
-            case"3":
-                Task3();
-                break;
-            
-            case"4":
-                Task4();
-                break;
-            
-            case"5":
-                Task5();
-                break;
-            
-            case"6":
-                Task6();
-                break;
-            
-            case"7":
-                Task7();
-                break;
+        boolean work = true;
+        int answer;
+        while (work) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("\u001B[35mЗадачи:");
+            System.out.println("\u001B[36m(\u001B[35m0\u001B[36m) - Выход из программы.");
+            System.out.println("\u001B[36m(\u001B[35m1\u001B[36m) - Конвентор градусов.");
+            System.out.println("\u001B[36m(\u001B[35m2\u001B[36m) - Угадай число.");
+            System.out.println("\u001B[36m(\u001B[35m3\u001B[36m) - 3 задача одномерный массив");
+            System.out.println("\u001B[36m(\u001B[35m4\u001B[36m) - 4 задача");
+            System.out.println("\u001B[36m(\u001B[35m5\u001B[36m) - 5 задача");
+            System.out.println("\u001B[36m(\u001B[35m6\u001B[36m) - 6 задача");
+            System.out.println("\u001B[36m(\u001B[35m7\u001B[36m) - 7 задача");
+            System.out.println(" ");
+            System.out.println("\u001B[35mВыберите задачу: " + "\u001B[32m");
+            String choose = input.nextLine();
+            System.out.println(" ");
+            switch(choose){
+                case"0":
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"1":
+                    Weather();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"2":
+                    RandomGame();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"3":
+                    Task3();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"4":
+                    Task4();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"5":
+                    Task5();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"6":
+                    Task6();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+
+                case"7":
+                    Task7();
+                    System.out.println("Вы желаете выйти из программы?\n(1) - Да\n(2) - Нет");
+                    answer = input.nextInt();
+                    if (answer == 1){
+                        work = false;
+                    } else if (answer == 2){
+                        break;
+                    } 
+                    break;
+            }
         }
     }
     private void Weather(){
@@ -93,13 +152,13 @@ class App {
                 System.out.println("Введите градусы по Цельсию: ");
                 double gradC2 = input.nextDouble();
                 z = gradC2 + k;
-                System.out.println("По кельвина:" + z);
+                System.out.println("По кельвина: " + z);
                 break;
             case 4:
                 System.out.println("Введите градусы по Кельвина: ");
                 double gradK1 = input.nextDouble();
                 z = gradK1 - k;
-                System.out.println("По цельсия:" + z);
+                System.out.println("По цельсия: " + z);
                 break;
             case 5:
                 System.out.println("Введите градусы по Кельвина: ");
@@ -211,10 +270,10 @@ class App {
     private void Task6(){
         System.out.println("Создаем ДВУХМЕРНЫЙ ЗУБЧАТЫЙ массив  из 10х(5,6,7,8,9) ячеек типа int, \nзаполняем его случайными числами и выводим \nего значения в цикле");
         int myArr[][] = new int[10][];
-        int n = -1;
+        int n = 1;
         int x;
         Random random = new Random();
-        x = random.nextInt((1000 - 500) + 500);
+        x = random.nextInt((600 - 500) + 500);
         boolean cycle = false;
         for (int i = 0; i < myArr.length; i++) {
             if (i == 5 | cycle) {
